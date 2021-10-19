@@ -1,0 +1,400 @@
+@import "../../global.scss";
+
+.intro {
+  background-color: white;
+  display: flex;
+
+  @include mobile{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left {
+    flex: 0.49;
+    overflow: hidden;
+
+    @include mobile{
+      margin-bottom: -246px;
+    }
+
+    .imgContainer {
+      width: 700px;
+      height: 700px;
+      background-color: crimson;
+      border-radius: 50%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      float: right;
+
+      @include mobile{
+        align-items: flex-start;
+        height: 40%;
+      }
+
+      img {
+        height: 100%;
+
+        // @include mobile{
+        //   height: 50%;
+        // }
+      }
+    }
+  }
+  .right {
+    flex: 0.5;
+    position: relative;
+
+    @include mobile{        
+      padding-left: 0;
+      align-items: center;
+        height:50%;
+        width:100%;
+        margin: 20px;
+      overflow: hidden;
+      
+    }
+
+
+    .wrapper {
+      width: 100%;
+      height: 50%;
+      padding-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+
+      @include mobile{        overflow: hidden;
+        padding-left: 0;
+        align-items: center;
+          height:50%;
+          width:100%;
+          margin: 20px;
+        overflow: hidden;
+
+        
+     
+      }
+
+      h1 {
+        font-size: 60px;
+        margin: 10px 0;
+
+        @include mobile{
+          overflow: hidden;
+          font-size: 15px;
+          // margin-bottom: 100px;
+                
+        }
+      }
+      h2 {
+        font-size: 35px;
+
+       
+        @include mobile{
+          overflow: hidden;
+          font-size: 27px;
+          // margin-bottom: 100px;
+                
+        }
+        
+
+      }
+      h3 {
+        font-size: 30px;
+
+        @include mobile{
+          font-size: 20px;
+          overflow: hidden;
+         margin-bottom: 100px; 
+        }
+
+        span {
+          font-size: inherit;
+          color: crimson;
+        }
+
+        .ityped-cursor {
+          animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+      }
+    }
+    a {
+      position: absolute;
+      bottom: 10px;
+      left: 40%;
+
+      img {
+        width: 30px;
+        animation: arrowBlink 2s infinite;
+      }
+
+      @keyframes arrowBlink {
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+@keyframes letszoom {
+	from {
+		transform: scale(0.6);
+	}
+	to {
+		transform: scale(0.9);
+	}
+}
+.icon-bar {
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 10;
+
+
+  @include mobile{ 
+      height:10%;
+      width:10%;
+      font-size: 2rem;
+    overflow: hidden;
+    
+  }
+  
+	a {
+    
+  
+
+		width: 17rem;
+		background: #3b5999;
+		color: #fff;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		font-size: 1.7rem;
+		padding: 0.5rem;
+		transition: all 0.5s linear;
+		transform: translateX(-14.5rem);
+		&:hover {
+			transform: translateX(0);
+		}
+		.fab {
+			padding-left: 1rem;
+			font-size: 3rem;
+			animation: letszoom 3s linear alternate-reverse infinite;
+		}
+	}
+	.twitter {
+		background: #00aced;
+	}
+	.instagram {
+		background: #e4405f;
+	}
+	.youtube {
+		background: #cd201f;
+	}
+	.linkedin {
+		background: #0077b5;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  background: #25b79f;
+}
+
+
+.skills {
+  position: absolute;
+  top: 68%;
+  height: 60%;
+  width:92%;
+  overflow: hidden;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 10px;
+  @include mobile{
+  width:130%;
+  height:80%;
+  margin-top: 28px;
+  overflow: hidden;
+  }
+
+
+  // box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.skills-bar {
+  padding: 25px 30px;
+  overflow: hidden;
+
+  @include mobile{
+    width:95%;
+    height:80%;
+    margin:-25px;
+   
+    }
+
+}
+
+.skills-bar .bar {
+  margin: 25px 0;
+
+  @include mobile{
+  margin-top: 2px;
+   
+   
+    }
+
+}
+
+.skills-bar .bar .info span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.skills-bar .bar .info {
+  margin-bottom: 8px;
+  color: #07374a;
+}
+
+.skills-bar .bar .progress-line {
+  position: relative;
+  height: 10px;
+  width: 550px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.bar .progress-line span {
+  position: absolute;
+  
+  height: 100%;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.progress-line .html {
+  width: 100%;
+  background: #0077b5;
+}
+.progress-line .css {
+  width: 90%;
+  background: #25b79f;
+ 
+}
+.progress-line .bootstrap {
+  width: 81%;
+  background: green;
+}
+.progress-line .javascript {
+  width: 72%;
+  background:#ec123a;
+}
+.progress-line .c {
+  width: 90%;
+  background:#07374a;
+}
+
+.bar .progress-line span::before {
+  position: absolute;
+  content: "";
+  height: 0;
+  right: 0;
+  top: -14px;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-style: #f0f0f0;
+  border-top-color: #07374a;
+}
+
+.bar .progress-line span::after {
+  position: absolute;
+  right: 0;
+  top: -28px;
+  color: #f0f0f0;
+  font-size: 12px;
+  font-weight: 700;
+  background: #07374a;
+  padding: 1px 8px;
+  border-radius: 3px;
+}
+
+
+.progress-line .html::after {
+  content: "80%";
+}
+.progress-line .css::after {
+  content: "70%";
+}
+.progress-line .bootstrap::after {
+  content: "82%";
+}
+.progress-line .javascript::after {
+  content: "62%";
+}
+.progress-line .c::after {
+  content: "90%";
+}
+
+/* ////........Media Query........//// */
+
+@media (max-width: 700px) {
+    .skills{
+        width: 80%;
+    }
+
+    .skills-bar .bar .progress-line{
+        width: 100%;
+    }
+}      
+
+
+
+
+
+
